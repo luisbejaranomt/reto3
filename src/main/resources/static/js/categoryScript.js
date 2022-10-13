@@ -1,9 +1,8 @@
-const urlCategory = 'http://localhost:8080/';
 
 function getCategories(){  //Funcion Get
 
     $.ajax({
-        url : urlCategory + "api/Category/all",
+        url : "api/Category/all",
         type : 'GET',
         dataType : 'json',
 
@@ -57,7 +56,7 @@ function saveCategory() {
         window.alert("Error. Campos vacios. Por favor ingresar datos");
     }else{
         $.ajax({
-            url : urlCategory + "api/Category/save",
+            url : "api/Category/save",
             type : 'POST',
             //   dataType : 'json',
             data:dataToSend,

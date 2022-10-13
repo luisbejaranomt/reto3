@@ -1,7 +1,7 @@
-const urlClient = 'http://localhost:8080/';
+
 function getClients(){  //Funcion Get
     $.ajax({
-        url : urlClient + "api/Client/all",
+        url : "api/Client/all",
         type : 'GET',
         dataType : 'json',
 
@@ -70,7 +70,7 @@ function saveClient() {
     }
 
     $.ajax({
-        url : urlClient + 'api/Client/save',
+        url : 'api/Client/save',
         type : 'POST',
         //   dataType : 'json',
         data:dataToSend,

@@ -1,7 +1,7 @@
-var urllibrary = 'http://localhost:8080/';
+
 function getLibraries(){  //Funcion Get
     $.ajax({
-        url : urllibrary + "api/Lib/all",
+        url : "api/Lib/all",
         type : 'GET',
         dataType : 'json',
 
@@ -23,7 +23,7 @@ function getLibraries(){  //Funcion Get
                 k += "<td class='hidden'>" + cs[i].id + "</td>";
                 k += "<td>" + cs[i].target + "</td>";
                 k += "<td>" + cs[i].capacity + "</td>";
-                k += "<td>" + cs[i].category_id + "</td>";
+                k += "<td>" + cs[i].category.name + "</td>";
                 k += "<td>" + cs[i].name + "</td>";
               //  k += "<td>" + "<button onclick='getDetailLibrary("+cs[i].id+")'>Actualizar</button> " + "</td>";
               //  k += "<td>" + "<button onclick='deleteLibrary("+cs[i].id+")'>Eliminar</button><br>" + "</td>";
