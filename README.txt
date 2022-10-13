@@ -1,1 +1,1 @@
-Se crear archivo readme con el fin de guardar los comando mas usados.
+Se crea archivo readme con el fin de guardar los comando mas usados :)
