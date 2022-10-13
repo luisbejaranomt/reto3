@@ -16,11 +16,16 @@ import java.util.Optional;
 public class CategoryController {
     @Autowired
     private CategoryService categoryService;
-
+    /*
     @GetMapping("/all")
     public List<Category> getCategories(){
         return  categoryService.getAll();
     }
+    */
+    @GetMapping("/all")
+    public List<Category> getCategory(){
+        return categoryService.getAll();
+    }//C4
 
     @GetMapping("/{id}")
     public Optional<Category> getCategory(@PathVariable ("id") int id){
