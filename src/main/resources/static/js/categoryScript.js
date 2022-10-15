@@ -1,3 +1,24 @@
+function fetchCategoryData(){
+    $.ajax({
+        url : "api/Category/all",
+        type : 'GET',
+        data : 'json',
+        success : function(c) {
+            //return c;
+            $("#categoryIdLibrary").empty();
+            for (let i=0; i < c.length; i++){
+                let option = "<option value='" + c[i].id + "'>" + c[i].name + "</option>"
+                $("#categoryIdLibrary").append(option);
+            }
+        },
+        error : function(xhr, textStatus, error) {
+            window.alert("Error al traer datos Categoria. Revise los datos y/o conexión con el servidor");
+        },
+        complete: function(){
+
+        }
+    });
+}
 
 function getCategories(){  //Funcion Get
 

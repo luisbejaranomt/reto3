@@ -65,7 +65,7 @@ function saveClient() {
         window.alert("Error. Campos vacíos. Por favor ingresar datos");
         return {
             error: true,
-            message: 'Parametetros Obligatorios'
+            message: 'Parametros Obligatorios'
         }
     }
 
@@ -95,7 +95,7 @@ function saveClient() {
 function setUserActive(idClient) {
     //let idClientSelect=$("#idClient").val();
     $("#idUserActive").val(idClient)
-    window.alert(idClient);
+   // window.alert(idClient);
 
 }
 

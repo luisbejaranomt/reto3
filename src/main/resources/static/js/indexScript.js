@@ -21,6 +21,17 @@ function showSection(fileHtml) {
 
         success : function(answer){
             $("#sectionRight").html (answer);
+            //window.alert(fileHtml);
+            if (fileHtml === "library") {
+                fetchCategoryData();
+            }
+            if (fileHtml === "message") {
+                fetchLibraryData("message");
+            }
+            if (fileHtml === "reservation") {
+                fetchLibraryData("reservation");
+            }
+
             // $("#sectionRight").load()
         },
         error : function(xhr, status) {
