@@ -1,6 +1,8 @@
+const BASE_URL='http://129.153.51.72:8080'
+
 function fetchCategoryData(){
     $.ajax({
-        url : "api/Category/all",
+        url : BASE_URL + "api/Category/all",
         type : 'GET',
         data : 'json',
         success : function(c) {
