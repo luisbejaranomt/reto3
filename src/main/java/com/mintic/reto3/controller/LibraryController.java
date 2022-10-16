@@ -11,7 +11,7 @@ import java.util.Optional;
 
 
 @RestController /* Recibe las peticiones de postman, movil etc*/
-@RequestMapping("/api/Library") /* Mapeo de la peticion. Se establece la URL */
+@RequestMapping("/api/Lib") /* Mapeo de la peticion. Se establece la URL */
 @CrossOrigin(origins = "*", methods = {RequestMethod.GET,RequestMethod.POST,RequestMethod.PUT,RequestMethod.DELETE})
 public class LibraryController {
     @Autowired
