@@ -35,5 +35,24 @@ public class CategoryService {
             }
         }
     }
+    public Category update(Category c){
+        if(c.getId() != null){
+            Optional<Category> caux = categoryRepository.getCategory(c.getId());
+            if(!caux.isEmpty()){
+                if(c.getDescription()!= null){
+                    caux.get().setDescription(c.getDescription());
+                }
+                if(c.getName() != null){
+                    caux.get().setName(c.getName());
+                }
+                categoryRepository.save(caux.get());
+                return caux.get();
+            } else {
+                return c;
+            }
+        }else{
+            return c;
+        }
+    }
 
 }

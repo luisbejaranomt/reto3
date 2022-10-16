@@ -36,4 +36,42 @@ public class LibraryService {
         }
     }
 
+    public Library update(Library l){
+        if(l.getId() != null){
+            Optional<Library> taux = LibraryRepository.getLibrary(l.getId());
+            if(!taux.isEmpty()){
+                if(l.getName() != null){
+                    taux.get().setName(l.getName());
+                }
+                if(l.getTarget() != null){
+                    taux.get().setTarget(l.getTarget());
+                }
+                if(l.getCapacity() != null){
+                    taux.get().setCapacity(l.getCapacity());
+                }
+                if(l.getDescription() != null){
+                    taux.get().setDescription(l.getDescription());
+                }
+                if(l.getCategory() != null){
+                    taux.get().setCategory(l.getCategory());
+                }
+                LibraryRepository.save(taux.get());
+                return taux.get();
+            } else {
+                return l;
+            }
+        }else{
+            return l;
+        }
+    }
+
+    public boolean delete(int id){
+        Boolean respuesta = getLibrary(id).map(t ->{
+            libraryRepository.delete(t);
+            return true;
+        }).orElse(false);
+        return respuesta;
+    }
+
+
 }

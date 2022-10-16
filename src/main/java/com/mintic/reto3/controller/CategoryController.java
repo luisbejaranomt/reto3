@@ -16,26 +16,29 @@ import java.util.Optional;
 public class CategoryController {
     @Autowired
     private CategoryService categoryService;
-    /*
-    @GetMapping("/all")
-    public List<Category> getCategories(){
-        return  categoryService.getAll();
-    }
-    */
+
     @GetMapping("/all")
     public List<Category> getCategory(){
         return categoryService.getAll();
     }//C4
-
-    @GetMapping("/{id}")
-    public Optional<Category> getCategory(@PathVariable ("id") int id){
-        return  categoryService.getCategory(id);
-    }
 
     @PostMapping("/save")
     @ResponseStatus(HttpStatus.CREATED)
     public Category save(@RequestBody Category c){
         return  categoryService.save(c);
     }
+
+    @PutMapping("/update")
+    @ResponseStatus(HttpStatus.CREATED)
+    public Category update(@RequestBody Category c){
+        return categoryService.update(c);
+    }
+
+    @GetMapping("/{id}")
+    public Optional<Category> getCategory(@PathVariable ("id") int id){
+        return  categoryService.getCategory(id);
+    }
+
+
 
 }

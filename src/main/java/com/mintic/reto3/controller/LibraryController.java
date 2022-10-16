@@ -33,4 +33,16 @@ public class LibraryController {
         return  libraryService.save(l);
     }
 
+    @PutMapping("/update")
+    @ResponseStatus(HttpStatus.CREATED)
+    public Library update(@RequestBody Library l){
+        return libraryService.update(l);
+    }
+
+    @DeleteMapping("/{id}")
+    public boolean delete(@PathVariable("id") int id){
+        return libraryService.delete(id);
+    }
+
+
 }
